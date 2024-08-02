@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Into My Mind</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/nektarine" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/main.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button class="icon-btn" id="icon-btn"><i class="fa-solid fa-plus icon"></i></button>
+            <div id="show-icons" class="show-icons">
+                <div class="to-do-after"><button id="todo-icon" class="todo-icon"><i class="fa-solid fa-check"></i></button></div>
+                <div class="calendar-after"><button id="calendar-option" class="todo-icon"><i class="fa-solid fa-calendar-days"></i></button></div>
+                <div class="stop-watch-after"><button id="stopwatch-icon" class="todo-icon"><i class="fa-regular fa-clock"></i></button></div>
+                <div class="timer-after"><button id="timer-icon" class="todo-icon"><i class="fa-solid fa-stopwatch"></i></button></div>
+                <div class="note-after"><button id="note-icon" class="todo-icon"><i class="fa-solid fa-clipboard"></i></button></div>
+            </div>
+            <div class="title"><h1>IntoMyMind</h1></div>
+        </header>
+        <div class="main" id="main"></div>
+        <div id="template-calendar" class="floating-calendar hidden">
+            <div class="calendar-header">
+                Calendar
+                <button class="close-btn"><i class="fa-solid fa-close"></i></button>
+            </div>
+            <div class="calendar-body">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?height=360&wkst=1&ctz=Africa%2FCairo&bgcolor=%235cb4e0&showTitle=0&showPrint=0&showTz=0&src=ZW4uZWcjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%cfc2b2"
+                    style="border:solid 1px #777" width="480" height="360" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script> -->
+</body>
+</html>

@@ -1,0 +1,707 @@
+/* Include the updated CSS styles here */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Be Vietnam Pro";
+}
+
+body,
+html {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Be Vietnam Pro";
+    color: var(--primary-Dark-Blue);
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    padding: 0.6em;
+    list-style: none;
+}
+
+.icon-btn {
+    padding: 1em;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 1.5em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-icon {
+    padding: 1em;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.7em;
+    cursor:pointer ;
+}
+
+.main {
+    height: 100vh;
+    /* background-color: #273136; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#show-icons {
+    position: relative;
+    transition: 0.2s ease;
+    top: -6em;
+    transform: translate(-100%, 50%) rotate(0) skew(0deg, 0deg) scaleX(0) scaleY(1);
+}
+
+.show-icons.active {
+    top: 0px !important;
+    transform: translate(7%) !important;
+}
+
+.main div {
+    /* background-color: #699cb6; */
+    background-color: rgb(207, 194, 178);
+    border-radius: 8px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.wrapper .content {
+    padding: 2em;
+}
+
+.wrapper .header {
+    padding: 1em;
+    cursor: move;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper header.active {
+    cursor: move;
+    user-select: none;
+}
+
+.new-task {
+    margin-top: 1em;
+    margin-bottom: -21px;
+    margin-left: -1em;
+}
+
+.new-task input {
+    padding: 0.2em;
+    width: 87%;
+    border: 0px solid;
+    border-radius: 6px;
+}
+
+.new-task button {
+    cursor: pointer;
+    border: 0px solid;
+    padding: 0.1em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.222);
+}
+
+.header button {
+    position: absolute;
+    right: 5%;
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+#list li {
+    list-style: circle !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#list li button {
+    font-size: 0.8em;
+    border: 0px;
+    padding: 3px;
+    border-radius: 8px;
+    padding: 0.5;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.stopwatch {
+    padding: 1em;
+}
+
+.stopwatch-content button,
+#startTimer,
+#stopTimer {
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.stopwatch-content {
+    padding: -1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+.timer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerDisplay {
+    font-size: 2em;
+}
+
+.hidden {
+    display: none;
+}
+.floating-calendar {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: #f0f4f8;
+    /* Lighter background color */
+    border: 1px solid #b0bec5;
+    /* Lighter border */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: move;
+}
+
+.calendar-header {
+    background-color: #cfc2b2;
+    /* Primary color */
+    color: white;
+    padding: 5px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header .close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.calendar-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar-body iframe {
+    border: 0;
+    width: 480px;
+    /* Adjusted size */
+    height: 360px;
+    /* Adjusted size */
+}
+
+.to-do-after:hover::after {
+    position: absolute;
+    content: 'To-Do list';
+    font-size: 12px;
+    right: -5em;
+    top: 0.7em;
+    background-color: #fff;
+    padding: 3px;
+}
+.calendar-after:hover::after {
+    position: absolute;
+    content: 'Add-Calendar';
+    font-size: 12px;
+    right: -7.2em;
+    top: 4.8em;
+    background-color: #fff;
+    padding: 3px;
+}.stop-watch-after:hover::after {
+    position: absolute;
+    content: 'Stop-Watch';
+    font-size: 12px;
+    right: -6.1em;
+    top: 9.1em;
+    background-color: #fff;
+    padding: 3px;
+}.timer-after:hover::after {
+    position: absolute;
+    content: 'Timer';
+    font-size: 12px;
+    right: -3em;
+    top: 13.5em;
+    background-color: #fff;
+    padding: 3px;
+}
+#todo-name{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    width: 60%;
+}
+.note-after:hover::after {
+        position: absolute;
+            content: 'Note';
+            font-size: 12px;
+            right: -2.3em;
+            top: 18.1em;
+            background-color: #fff;
+            padding: 3px;
+}
+/* -------------------------------- */
+/* .to-do-after:hover::before {
+    position: absolute;
+    content: "";
+    border: 12.3px solid white;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: 1.86em;
+    top: 0.6em;
+} */
+/* .calendar-after:hover::before {
+    position: absolute;
+    content: "";
+    border: 12.3px solid white;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: 1.86em;
+    top: 0.6em;
+}.stop-watch-after:hover::before {
+    position: absolute;
+    content: "";
+    border: 12.3px solid white;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: 1.86em;
+    top: 0.6em;
+}.timer-after:hover::before {
+   position: absolute;
+    content: "";
+    border: 12.3px solid white;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    left: 1.86em;
+    top: 0.6em;
+} */
+
+/* Star Background Styles */
+.stars {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    animation: twinkle 20s infinite linear;
+}
+
+@keyframes twinkle {
+    from {
+        top: 0%;
+        opacity: 0.5;
+    }
+
+    to {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Ensure the stars are behind other content */
+    overflow: hidden;
+    background: black;
+    /* Dark background to enhance star visibility */
+}
+#note-space{
+    background-color: rgba(255, 255, 255, 0.238);
+    padding: 3px;
+}
+.note-content{
+    padding: 2em;
+    align-items: center;
+    padding-right: 2.5em;
+}
+/* Include the updated CSS styles here */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Be Vietnam Pro";
+}
+
+body,
+html {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Be Vietnam Pro";
+    color: var(--primary-Dark-Blue);
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    padding: 0.6em;
+    list-style: none;
+}
+
+.icon-btn {
+    padding: 1em;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    font-size: 1.5em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-icon {
+    padding: 1em;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.7em;
+    cursor: pointer;
+}
+
+.main {
+    height: 100vh;
+    /* background-color: #273136; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#show-icons {
+    display: inline-block;
+    position: relative;
+    transition: 0.2s ease;
+    top: -6em;
+    transform: translate(-100%, 50%) rotate(0) skew(0deg, 0deg) scaleX(0) scaleY(1);
+}
+
+.show-icons.active {
+    top: 0px !important;
+    transform: translate(8%) !important;
+}
+
+.main div {
+    /* background-color: #699cb6; */
+    background-color: rgb(207, 194, 178);
+    border-radius: 8px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.wrapper .content {
+    padding: 2em;
+}
+
+.wrapper .header {
+    padding: 1em;
+    cursor: move;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper header.active {
+    cursor: move;
+    user-select: none;
+}
+
+.new-task {
+    margin-top: 1em;
+    margin-bottom: -21px;
+    margin-left: -1em;
+}
+
+.new-task input {
+    padding: 0.2em;
+    width: 87%;
+    border: 0px solid;
+    border-radius: 6px;
+}
+
+.new-task button {
+    cursor: pointer;
+    border: 0px solid;
+    padding: 0.1em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.222);
+}
+
+.header button {
+    position: absolute;
+    right: 5%;
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+}
+
+#list li {
+    list-style: circle !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#list li button {
+    font-size: 0.8em;
+    border: 0px;
+    padding: 3px;
+    border-radius: 8px;
+    padding: 0.5;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.stopwatch {
+    padding: 1em;
+}
+
+.stopwatch-content button,
+#startTimer,
+#stopTimer {
+    background-color: transparent;
+    border: 0px solid;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.stopwatch-content {
+    padding: -1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+.timer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timerDisplay {
+    font-size: 2em;
+}
+
+.hidden {
+    display: none;
+}
+
+.floating-calendar {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: #f0f4f8;
+    /* Lighter background color */
+    border: 1px solid #b0bec5;
+    /* Lighter border */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: move;
+}
+
+.calendar-header {
+    background-color: #cfc2b2;
+    /* Primary color */
+    color: white;
+    padding: 5px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header .close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+.calendar-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar-body iframe {
+    border: 0;
+    width: 480px;
+    /* Adjusted size */
+    height: 360px;
+    /* Adjusted size */
+}
+
+.to-do-after:hover::after {
+    position: absolute;
+    content: 'To-Do list';
+    font-size: 12px;
+    right: -6em;
+    top: 1.7em;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.calendar-after:hover::after {
+    position: absolute;
+    content: 'Add-Calendar';
+    font-size: 12px;
+    right: -8.2em;
+    top: 6.2em;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.stop-watch-after:hover::after {
+    position: absolute;
+    content: 'Stop-Watch';
+    font-size: 12px;
+    right: -7.1em;
+    top: 10.6em;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.timer-after:hover::after {
+    position: absolute;
+    content: 'Timer';
+    font-size: 12px;
+    right: -4em;
+    top: 14.8em;
+    background-color: #fff;
+    padding: 3px;
+}
+
+#todo-name {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    width: 60%;
+}
+
+.note-after:hover::after {
+    position: absolute;
+    content: 'Note';
+    font-size: 12px;
+    right: -3.3em;
+    top: 19.1em;
+    background-color: #fff;
+    padding: 3px;
+}
+header{
+    position: static;
+}
+/* Title Styles */
+.title {
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 1em 0;
+    font-size: 2em; /* Adjust size as needed */
+    color: #cfc2b2; /* Adjust color if needed */
+    z-index: 999999999; /* Ensure it's above other content */
+}
+#timerInput{
+    padding: 1em;
+    width: 20%;
+    border-radius: 1em;
+    border: none;
+}
+
+.title h1 {
+    margin: 0;
+    font-family: 'Nektarine', sans-serif;
+}
+@media (max-width: 900px) {
+    body{
+        font-size: 12px;
+    }
+}
+@media (max-width:450) {
+    body{
+        font-size: 10px;
+    }
+    
+}
